@@ -1,0 +1,45 @@
+<div class="container" ng-controller="TaskController as taskCtrl">
+    <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-5 col-lg-offset-3 col-lg-5">
+      
+      <form>
+        <div class="titulo">
+          <h2 >To Do List</h2>
+        </div>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Titulo" ng-model="taskCtrl.task.titulo" required>
+          <span class="input-group-btn">
+            <button class="btn {{(taskCtrl.task.id >0) ? 'btn-info' : 'btn-success'}}" type="submit" ng-click="taskCtrl.saveTask()">
+              <span class="glyphicon glyphicon-plus"></span> 
+              {{(taskCtrl.task.id >0) ? 'Atualizar' : 'Adicionar'}}
+            </button>
+          </span>
+        </div>
+        <div>
+          <textarea class="form-control" rows="3" placeholder="Descrição" ng-model="taskCtrl.task.descricao"></textarea>
+        </div>
+      </form>
+      <hr/>
+      <ul class="list-group" ng-show="taskCtrl.taskList.length > 0">
+        <li class="list-group-item clearfix task" ng-repeat="taskItem in taskCtrl.taskList" ng-class="{disabled: taskItem.concluido}"> 
+          <p class="lead">{{taskItem.titulo}}</p>
+          {{taskItem.descricao}}
+          <div>
+            <span class="pull-right">
+              <button class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-pencil" ng-click="taskCtrl.editTask(taskItem)"></span>
+              </button>
+              <button class="btn btn-primary btn-xs" ng-show="!taskItem.concluido">
+                <span class="glyphicon glyphicon-ok" ng-click="taskCtrl.doneTask(taskItem)"></span>
+              </button>
+              <button class="btn btn-primary btn-xs" ng-show="taskItem.concluido">
+                <span class="glyphicon glyphicon-repeat" ng-click="taskCtrl.unDoneTask(taskItem)"></span>
+              </button>
+              <button class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove" ng-click="taskCtrl.deleteTask(taskItem)"></span>
+              </button>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

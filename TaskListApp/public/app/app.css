@@ -1,0 +1,45 @@
+.list-group{
+    max-height: 500px;
+    margin-bottom: 10px;
+    overflow:auto;
+}
+.list-group-item{
+    border: 0px;
+    margin: 5px;
+    padding: 50px 50px;
+    background: #A4F4F4;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.list-group-item:first-child {
+    border-radius: 10px;
+    opacity: 0.8;
+}
+  
+.list-group-item:last-child {
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.titulo {
+    --background: rgb(34, 69, 165);
+    color: #FFF;
+    text-align: center;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}

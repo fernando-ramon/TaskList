@@ -1,0 +1,7 @@
+{
+    "files" : "./public/**/*.{js, html, css}",
+    "server" : { "baseDir" : "./public" },
+    "https" : true,
+    "open" : true,
+    "watch": true
+}
